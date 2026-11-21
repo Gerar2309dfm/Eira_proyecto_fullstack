@@ -1,0 +1,501 @@
+/*
+ * Identidad visual EIRA · Nerdearla
+ * Colores tomados de la imagen original compartida por EIRA:
+ *   rosa claro   #FFD6DA
+ *   rosa medio   #FFBBC6
+ *   rosa intenso #FFA8B8
+ *   blanco       #FFFFFF
+ *
+ * El rosa profundo es un color de interfaz derivado, NO parte del logotipo:
+ *   rosa acción  #963452
+ * Se utiliza para que botones y enlaces tengan contraste suficiente.
+ *
+ * Este archivo va después de global.css. Mantener los estilos de marca
+ * aislados permite actualizar la identidad sin tocar los componentes.
+ */
+
+:root {
+  --brand-pink-light: #ffd6da;
+  --brand-pink: #ffbbc6;
+  --brand-pink-strong: #ffa8b8;
+  --brand-rose: #963452;
+  --brand-rose-hover: #76283f;
+  --brand-plum: #3a2632;
+  --brand-ink: #3d3038;
+  --brand-muted: #806a76;
+  --brand-blush: #fff0f3;
+  --brand-border: #f0dfe5;
+
+  /* Variables de compatibilidad con la base del proyecto. */
+  --navy: var(--brand-plum);
+  --teal: var(--brand-rose);
+  --teal-dark: var(--brand-rose-hover);
+  --dark-text: var(--brand-ink);
+  --subtext: var(--brand-muted);
+  --line: #f0e5e9;
+  --shadow: 0 8px 25px rgb(75 37 57 / 5%);
+
+  color: var(--brand-ink);
+  background: #fff9fb;
+}
+
+/* Accesibilidad y navegación principal. */
+button:focus-visible,
+select:focus-visible,
+input:focus-visible,
+a:focus-visible {
+  outline-color: var(--brand-rose);
+}
+
+a {
+  color: var(--brand-rose);
+}
+
+.sidebar {
+  background: linear-gradient(160deg, #3a2632 0%, #50313e 100%);
+  color: #fff4f6;
+}
+
+.brand {
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 0 4px 24px;
+}
+
+.eira-brand-logo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.sidebar-logo {
+  width: 100%;
+  box-shadow: 0 7px 18px rgb(24 7 19 / 12%);
+}
+
+.brand-caption {
+  margin-left: 11px;
+  margin-top: 0;
+  color: #ffe4e9;
+  font-size: 9px;
+  letter-spacing: 1.17px;
+}
+
+.sidebar-label {
+  color: #d9acbc;
+}
+
+.nav-item {
+  color: #ead0d8;
+}
+
+.nav-item:hover {
+  color: #fff;
+  background: #694353;
+}
+
+.nav-item.active {
+  color: #3a2632;
+  background: #ffd6df;
+  box-shadow: 0 2px 8px rgb(33 12 25 / 12%);
+}
+
+.nav-item.active svg {
+  color: #963452;
+}
+
+.nav-counter {
+  color: #fff;
+  background: #a34c6a;
+}
+
+.help-card {
+  border-color: #775263;
+  background: #583a49;
+}
+
+.help-card svg {
+  color: #ffd1db;
+}
+
+.help-card span,
+.sidebar-version {
+  color: #dec2ce;
+}
+
+/* Encabezado y elementos de interfaz. */
+.topbar {
+  border-bottom-color: var(--brand-border);
+  background: #fff;
+}
+
+.breadcrumb,
+.role-select-wrap {
+  color: #8b7480;
+}
+
+.breadcrumb strong,
+.panel-title h2,
+.metric-value,
+.patient-cell strong,
+.result-detail h2,
+.document-meta strong,
+.page-title h1 {
+  color: var(--brand-ink);
+}
+
+.demo-pill {
+  color: #8b3d57;
+  background: #fff0f4;
+  border-color: #f4d5df;
+}
+
+.role-select-wrap select,
+.field {
+  color: var(--brand-ink);
+  border-color: #eddee3;
+}
+
+.header-avatar,
+.avatar-soft {
+  color: var(--brand-rose);
+  background: #ffe1e8;
+}
+
+.eyebrow,
+.text-link {
+  color: var(--brand-rose);
+}
+
+.btn-primary {
+  color: #fff;
+  background: var(--brand-rose);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--brand-rose-hover);
+}
+
+.btn-outline {
+  color: #674959;
+  border-color: #ead8de;
+}
+
+.btn-outline:hover:not(:disabled) {
+  background: #fff5f7;
+}
+
+.btn-soft {
+  color: var(--brand-rose);
+  background: #ffe9ef;
+}
+
+.btn-soft:hover:not(:disabled) {
+  background: #ffd5e0;
+}
+
+.metric-card,
+.panel,
+.patient-portal {
+  border-color: var(--line);
+}
+
+.metric-symbol.teal,
+.metric-symbol.blue,
+.metric-symbol.purple {
+  color: var(--brand-rose);
+  background: #ffedf2;
+}
+
+.metric-symbol.orange {
+  color: #986123;
+  background: #fff5e4;
+}
+
+.demo-banner,
+.information-row {
+  color: #80586c;
+  border-color: #f0dce4;
+  background: #fff0f4;
+}
+
+.demo-banner svg,
+.information-row svg,
+.demo-banner strong {
+  color: #9c405f;
+}
+
+.flow-index {
+  border-color: #ffccd9;
+  color: var(--brand-rose);
+  background: #ffe9ef;
+}
+
+.flow-step:not(:last-child)::after {
+  background: #f0dbe2;
+}
+
+.search-input:focus-within {
+  border-color: #c16f8a;
+}
+
+.filter-list button.selected {
+  color: var(--brand-rose);
+  background: #ffe9ef;
+}
+
+.data-table tbody tr:hover,
+.data-table tbody tr.is-selected,
+.directory-item:hover,
+button.notification-item:hover,
+.notification-item.selected {
+  background: #fff4f7;
+}
+
+.status-teal {
+  color: var(--brand-rose);
+  background: #ffeaf0;
+}
+
+.status-purple {
+  color: #85486b;
+  background: #f9eafa;
+}
+
+.detail-icon,
+.file-icon,
+.timeline-bullet,
+.audit-icon,
+.document-symbol {
+  color: var(--brand-rose);
+  background: #ffedf2;
+}
+
+.next-step {
+  background: #fff3f6;
+  border-color: #f4dce4;
+}
+
+.next-step > div,
+.notice-sm {
+  color: var(--brand-rose);
+}
+
+.next-step p,
+.next-step small {
+  color: #8b6977;
+}
+
+.notice-sm {
+  background: #ffedf2;
+}
+
+.access-pill,
+.profile-badge {
+  color: var(--brand-rose);
+  background: #fff0f4;
+  border-color: #f4dce4;
+}
+
+.patient-profile {
+  background: linear-gradient(115deg, #ffe9ee, #fff9fb);
+  border-color: #f3dce4;
+}
+
+.avatar-profile {
+  color: var(--brand-rose);
+  background: #ffd4df;
+}
+
+.patient-profile small {
+  color: var(--brand-rose);
+}
+
+.document-symbol.pink {
+  color: var(--brand-rose);
+  background: #ffe7ed;
+}
+
+/* Portal pensado para un uso simple desde celular. */
+.portal-intro {
+  border-color: #f0dfe5;
+  background: #fff;
+}
+
+.portal-intro-logo {
+  width: min(240px, 90%);
+  margin: 0 auto 28px;
+}
+
+.portal-big-icon,
+.portal-file-icon {
+  color: var(--brand-rose);
+  background: #ffedf2;
+}
+
+.portal-greeting {
+  color: #3d2733;
+  background: linear-gradient(118deg, #ffd6da 0%, #ffbbc6 62%, #ffa8b8 100%);
+}
+
+.portal-greeting-logo {
+  width: 138px;
+  margin-bottom: 18px;
+}
+
+.portal-greeting > span {
+  color: #73394d;
+  opacity: 1;
+}
+
+.portal-greeting p {
+  color: #5c3d4b;
+}
+
+.portal-document {
+  border-color: #f1e0e5;
+  background: #fffdfd;
+}
+
+.portal-empty {
+  color: #866175;
+  background: #fff1f4;
+}
+
+.portal-assistance {
+  color: #7f596d;
+  background: #fff2f5;
+}
+
+.portal-assistance strong {
+  color: var(--brand-rose);
+}
+
+.upload-area {
+  color: var(--brand-rose);
+  border-color: #d79aad;
+  background: #fff5f7;
+}
+
+.upload-area strong {
+  color: #75505e;
+}
+
+.check-field input {
+  accent-color: var(--brand-rose);
+}
+
+.sms-preview {
+  color: #855068;
+  background: #fff3f6;
+  border-color: #f0dce4;
+}
+
+@media (max-width: 960px) {
+  .brand {
+    padding-top: 15px;
+  }
+
+  .sidebar-close {
+    top: 0;
+    right: 4px;
+    color: #fff;
+  }
+}
+
+@media (max-width: 730px) {
+  .mobile-nav-button {
+    color: var(--brand-rose);
+    border-color: #efdae2;
+    background: #fff0f4;
+  }
+
+  .portal-greeting-logo {
+    width: 115px;
+  }
+}
+
+/* Acceso a la página pública separada desde el panel administrativo. */
+.patient-preview-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 37px;
+  border-radius: 9px;
+  border: 1px solid #eed3de;
+  background: #fff2f6;
+  color: #823651;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 12px;
+  padding: 8px 11px;
+  white-space: nowrap;
+}
+.patient-preview-link:hover { background: #ffe3eb; }
+@media (max-width: 750px) {
+  .patient-preview-link { padding: 7px 9px; min-width: 37px; }
+  .patient-preview-link span { display: none; }
+}
+
+/* Alta de pacientes y laboratorio de SMS — misma identidad EIRA */
+.patient-directory-entry { flex-direction: column; align-items: stretch; gap: 8px; }
+.directory-open { border: 0; background: none; color: inherit; width: 100%; text-align: left; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0; }
+.directory-open:hover strong { color: var(--brand-rose); }
+.reset-access-btn { align-self: flex-end; margin-right: 12px; }
+.credentials-card { border-radius: 12px; border: 1px solid var(--brand-border); padding: 18px; background: var(--brand-blush); display: grid; gap: 12px; overflow-wrap: anywhere; }
+.credentials-card p { margin: 0; font-size: 13px; }
+.credentials-card code { font-size: 15px; color: var(--brand-rose); font-weight: 800; }
+.credentials-card small { color: var(--brand-muted); line-height: 1.5; }
+.sms-lab { padding: 0 23px 23px; display: grid; grid-template-columns: minmax(0,1fr) minmax(240px,0.9fr); gap: 24px; }
+.sms-test-form { display: flex; flex-direction: column; align-items: stretch; gap: 13px; }
+.sms-test-form .btn { align-self: flex-start; }
+.sms-test-form .field-help { margin: 0; line-height: 1.5; }
+.sms-phone-preview { background: linear-gradient(135deg, #ffedf1, #fff7f9); border: 1px solid var(--brand-border); border-radius: 16px; display: flex; flex-direction: column; padding: 22px; gap: 12px; }
+.sms-phone-preview strong { color: var(--brand-ink); font-size: 14px; }
+.sms-phone-preview small { color: var(--brand-muted); font-size: 11px; }
+.sms-phone-icon { color: var(--brand-rose); }
+.sms-bubble { padding: 14px; border-radius: 14px 14px 14px 3px; background: #fff; color: var(--brand-ink); box-shadow: 0 6px 20px #b87f9312; font-size: 13px; line-height: 1.6; }
+.sms-result-box { display: flex; gap: 9px; border: 1px solid #b9e2cc; background: #f1fbf5; color: #226c49; padding: 12px; border-radius: 9px; font-size: 12px; line-height: 1.5; }
+.sms-result-box svg { flex: none; }
+.sms-history-header { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 0 23px 12px; font-size: 13px; }
+.sms-log-list { padding: 0 23px 22px; }
+.sms-log-item { border-top: 1px solid var(--brand-border); padding: 11px 3px; display: flex; gap: 18px; align-items: center; justify-content: space-between; font-size: 12px; color: var(--brand-muted); }
+.sms-log-item span:first-child { font-weight: 800; color: var(--brand-ink); }
+.sms-log-item small { color: #877780; }
+@media (max-width: 850px) { .sms-lab { grid-template-columns: 1fr; } }
+@media (max-width: 580px) { .sms-lab { padding: 0 14px 20px; } .sms-history-header, .sms-log-list { padding-left: 14px; padding-right: 14px; } .sms-log-item { flex-wrap: wrap; } .directory-open { flex-wrap: wrap; } }
+
+/* Ingreso de personal, sin selector de rol con permisos en el cliente */
+.staff-login-shell { min-height: 100vh; display: grid; grid-template-columns: minmax(320px, 1.1fr) minmax(300px, .9fr); background: #fff9fb; }
+.staff-login-card { width: min(440px, calc(100% - 40px)); margin: auto; padding: 42px 0; }
+.staff-login-logo { width: 230px; max-width: 100%; margin: 0 0 28px; }
+.staff-login-caption { display: flex; gap: 7px; align-items: center; color: var(--brand-rose); font-size: 12px; font-weight: 700; }
+.staff-login-card h1 { margin: 10px 0 5px; font-size: clamp(24px, 3vw, 34px); color: var(--brand-ink); }
+.staff-login-card > p { color: var(--brand-muted); line-height: 1.6; margin: 4px 0 24px; }
+.staff-login-card .form-stack { padding: 23px; border: 1px solid var(--brand-border); border-radius: 18px; background: white; gap: 12px; display: flex; flex-direction: column; box-shadow: var(--shadow); }
+.staff-login-error { padding: 12px; color: #8b1735; background: #ffe4e9; border-radius: 9px; font-size: 13px; }
+.staff-login-hint { display: flex; gap: 7px; align-items: flex-start; font-size: 12px; line-height: 1.5; }
+.staff-login-hint svg { flex-shrink: 0; }
+.staff-login-side { background: linear-gradient(145deg, #ffe1e8, #f9a7bc); padding: clamp(40px,6vw,100px); display: flex; flex-direction: column; justify-content: center; gap: 20px; color: #643047; }
+.staff-login-side h2 { margin: 0; font-size: clamp(24px, 3vw, 38px); line-height: 1.18; }
+.staff-login-side p { font-size: 15px; line-height: 1.6; }
+.staff-login-side div { display: flex; gap: 14px; align-items: center; font-size: 14px; font-weight: 700; }
+.staff-login-side .btn { width: fit-content; background: white; }
+.staff-login-side small { line-height: 1.6; }
+.staff-identity { font-size: 12px; font-weight: 700; color: var(--brand-ink); }
+.staff-logout { display: inline-flex; gap: 7px; align-items: center; padding: 8px 11px; color: var(--brand-rose); background: #fff0f4; border: 1px solid var(--brand-border); border-radius: 9px; cursor: pointer; }
+.impact-kpis { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 14px; margin-bottom: 20px; }
+.impact-kpi { padding: 20px; border: 1px solid var(--brand-border); background: white; border-radius: 13px; display: grid; gap: 7px; }
+.impact-kpi strong { font-size: 29px; color: var(--brand-rose); }
+.impact-kpi span { font-size: 12px; color: var(--brand-muted); }
+.impact-columns { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
+.impact-list { padding: 0 18px 18px; display: grid; gap: 8px; }
+.impact-row { display: flex; gap: 12px; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); padding: 11px 3px; font-size: 13px; }
+.impact-row strong { color: var(--brand-rose); }
+@media(max-width: 900px) { .staff-login-shell { grid-template-columns: 1fr; } .staff-login-side { display: none; } .impact-kpis { grid-template-columns: repeat(2,1fr); } .impact-columns { grid-template-columns: 1fr; } }
+@media(max-width: 620px) { .staff-identity { display: none; } .staff-logout span { display: none; } .impact-kpis { grid-template-columns: 1fr 1fr; } }
